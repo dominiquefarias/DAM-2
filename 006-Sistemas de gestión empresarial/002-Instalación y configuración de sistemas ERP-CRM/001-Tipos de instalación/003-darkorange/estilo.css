@@ -1,10 +1,16 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html,
 body {
-    padding: 0px;
-    margin: 0px;
-    font-family: Ubuntu, sans-serif;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -13,39 +19,66 @@ body {
 }
 
 header {
-    flex: 1;
-    color: white;
     background: darkorange;
-    padding: 10px;
+    color: white;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.25rem;
 }
 
 main {
-    flex: 20;
+    flex: 1;
     display: flex;
 }
 
 nav {
-    flex: 1;
+    width: 220px;
     background: darkorange;
     display: flex;
     flex-direction: column;
-    padding: 10px;
     gap: 10px;
-}
-
-section {
-    flex: 8;
-}
-
-header h1 {
-    padding: 0px;
-    margin: 0px;
-    font-size: 20px;
+    padding: 10px;
 }
 
 nav a {
     background: white;
     color: darkorange;
     text-decoration: none;
-    padding: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.9;
+}
+
+section {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid darkorange;
+}
+
+table th,
+table td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+table th {
+    background: darkorange;
+    color: white;
+}
+
+table td {
+    border-bottom: 1px solid #f0f0f0;
 }

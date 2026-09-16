@@ -11,15 +11,28 @@ fetch("api/superapi.php?ruta=entidades")
 fetch("api/superapi.php?ruta=tabla")
     .then(function (respuesta) { return respuesta.json() })
     .then(function (datos) {
-        console.log(datos.clientes[0])
+        console.log(datos)
         let seccion = document.querySelector("section")
-        seccion.innerHTML += "<table>";
+        let cadenatabla = ""
+        cadenatabla += "<table>";
         // Primero pinto las cabeceras de columna
-        seccion.innerHTML += "<tr>";
-        datos.clientes[0].forEach(function (columna) {
-            seccion.innerHTML += "<th>" + columna + "</th>";
+        cadenatabla += "<tr>";
+        Object.keys(datos.clientes[0]).forEach(function (clave) {
+            cadenatabla += "<th>" + clave + "</th>";
         })
-        seccion.innerHTML += "</tr>";
+        cadenatabla += "</tr>";
         // Primero pinto las cabeceras de columna
-        seccion.innerHTML += "</table>";
-    }) 
+        // Ahora pinto el cuerpo de la tabla
+
+        datos.clientes.forEach(function (cliente) {
+            cadenatabla += "<tr>";
+            Object.keys(cliente).forEach(function (clave) {
+                cadenatabla += "<td>" + cliente[clave] + "</td>";
+            });
+            cadenatabla += "</tr>";
+        })
+
+        // Ahora pinto el cuerpo de la tabla
+        cadenatabla += "</table>";
+        seccion.innerHTML = cadenatabla
+    })
