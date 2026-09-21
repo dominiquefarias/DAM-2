@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- Define el tipo de documento como HTML5 -->
+<html lang="es">
+
+<head>
+    <!-- Define la codificación de caracteres en UTF-8 para admitir tildes, ñ y caracteres especiales -->
+    <meta charset="UTF-8">
+    <!-- Ajusta la escala y el ancho para que el diseño sea adaptable a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que se muestra en la pestaña del navegador -->
+    <title>Componentes HTML</title>
+
+    <!-- Reglas de estilo en cascada (CSS) internas -->
+    <style>
+        /* Aplica tipografía legible y un margen exterior al cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        /* Separa visualmente cada bloque de sección */
+        section {
+            margin-bottom: 30px;
+        }
+
+        /* Hace que cada etiqueta ocupe su propia línea y añade espacio vertical */
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Encabezado principal de la página -->
+    <h1>Componentes estándar de HTML</h1>
+
+
+    <!-- Sección 1: Campos básicos de entrada de texto y números -->
+    <section>
+
+        <h2>Entrada de datos</h2>
+
+        <!-- Campo de texto simple de una sola línea -->
+        <label>
+            Nombre:
+            <input type="text">
+        </label>
+
+        <!-- Campo de contraseña: oculta los caracteres tipeados por seguridad -->
+        <label>
+            Contraseña:
+            <input type="password">
+        </label>
+
+        <!-- Campo numérico: solo permite ingresar dígitos e incluye flechas de incremento/decremento -->
+        <label>
+            Edad:
+            <input type="number">
+        </label>
+
+    </section>
+
+
+    <!-- Sección 2: Elementos de selección e interactividad booleana -->
+    <section>
+
+        <h2>Selección</h2>
+
+        <!-- Casilla de verificación: permite marcar o desmarcar una opción independiente -->
+        <label>
+            <input type="checkbox">
+            Acepto las condiciones
+        </label>
+
+        <!-- Menú desplegable para elegir una opción de una lista cerrada -->
+        <label>
+            Ciudad:
+
+            <select>
+                <!-- Cada etiqueta <option> representa una alternativa elegible -->
+                <option>Valencia</option>
+                <option>Madrid</option>
+                <option>Barcelona</option>
+            </select>
+        </label>
+
+    </section>
+
+
+    <!-- Sección 3: Controles especializados nativos de HTML5 -->
+    <section>
+
+        <h2>Componentes especiales</h2>
+
+        <!-- Selector de fecha: despliega un calendario interactivo en el navegador -->
+        <label>
+            Fecha:
+            <input type="date">
+        </label>
+
+        <!-- Selector de color: abre la paleta o selector de colores del sistema -->
+        <label>
+            Color:
+            <input type="color">
+        </label>
+
+        <!-- Control deslizante (slider) delimitado entre un valor mínimo (0) y uno máximo (100) -->
+        <label>
+            Volumen:
+            <input type="range" min="0" max="100">
+        </label>
+
+    </section>
+
+
+    <!-- Sección 4: Disparadores de acciones e indicadores de estado -->
+    <section>
+
+        <h2>Acciones e información</h2>
+
+        <!-- Botón interactivo estándar para disparar envíos o eventos de JavaScript -->
+        <button>Guardar</button>
+
+        <!-- Párrafo descriptivo estándar -->
+        <p>Progreso:</p>
+
+        <!-- Barra de progreso nativa: muestra un 70% completado respecto a un total de 100 -->
+        <progress value="70" max="100"></progress>
+
+    </section>
+
+</body>
+
+</html>

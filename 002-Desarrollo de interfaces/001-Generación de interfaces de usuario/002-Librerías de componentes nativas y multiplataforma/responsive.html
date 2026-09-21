@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Declaración del tipo de documento: indica al navegador que use el estándar HTML5 -->
+<html lang="es">
+
+<head>
+    <!-- Codificación de caracteres: UTF-8 admite tildes, ñ y caracteres especiales sin errores -->
+    <meta charset="UTF-8">
+
+    <!-- Viewport: clave para el diseño responsive; ajusta la escala y el ancho a la pantalla del dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña o ventana del navegador -->
+    <title>Diseño responsive</title>
+
+    <!-- Bloque de estilos CSS internos -->
+    <style>
+        /* Estilos generales para todo el cuerpo del documento */
+        body {
+            font-family: Arial, sans-serif;
+            /* Tipografía limpia y legible por defecto */
+            margin: 30px;
+            /* Margen exterior para despegar el contenido de los bordes */
+        }
+
+        /* Contenedor flexible principal */
+        .contenedor {
+            display: flex;
+            /* Activa Flexbox: por defecto alinea los elementos hijos en una fila horizontal */
+            gap: 20px;
+            /* Espacio uniforme de separación entre cada tarjeta */
+        }
+
+        /* Estilos de cada tarjeta de producto */
+        .tarjeta {
+            flex: 1;
+            /* Distribución equitativa: todas las tarjetas crecen y ocupan el mismo ancho */
+            padding: 20px;
+            /* Espacio interno para que el texto no toque los bordes de la tarjeta */
+            border: 1px solid #999;
+            /* Borde gris sutil alrededor de cada producto */
+            border-radius: 8px;
+            /* Esquinas redondeadas */
+        }
+
+        /* Media Query para pantallas pequeñas (móviles o ventanas de hasta 600px de ancho) */
+        @media (max-width: 600px) {
+
+            /* Regla que sobrescribe el contenedor cuando la pantalla mide 600px o menos */
+            .contenedor {
+                flex-direction: column;
+                /* Cambia la dirección de fila a columna: las tarjetas se apilan en vertical */
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Encabezado de primer nivel: título principal de la sección -->
+    <h1>Productos</h1>
+
+    <!-- Contenedor padre que aplica el comportamiento flexible (Flexbox) -->
+    <div class="contenedor">
+
+        <!-- Elemento semántico que representa una pieza de contenido independiente (tarjeta 1) -->
+        <article class="tarjeta">
+            <h2>Producto 1</h2>
+            <p>Descripción del producto.</p>
+        </article>
+
+        <!-- Tarjeta de producto 2 -->
+        <article class="tarjeta">
+            <h2>Producto 2</h2>
+            <p>Descripción del producto.</p>
+        </article>
+
+        <!-- Tarjeta de producto 3 -->
+        <article class="tarjeta">
+            <h2>Producto 3</h2>
+            <p>Descripción del producto.</p>
+        </article>
+
+    </div>
+
+</body>
+
+</html>

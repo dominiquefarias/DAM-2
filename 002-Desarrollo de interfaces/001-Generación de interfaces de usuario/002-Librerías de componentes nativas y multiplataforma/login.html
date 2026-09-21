@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Especifica que el documento sigue el estándar HTML5 -->
+<html lang="es">
+
+<head>
+    <!-- Configura la codificación a UTF-8 (permite tildes, ñ y caracteres especiales) -->
+    <meta charset="UTF-8">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Inicio de sesión</title>
+</head>
+
+<body>
+
+    <!-- Encabezado principal que indica el propósito de la pantalla -->
+    <h1>Inicio de sesión</h1>
+
+    <!-- Contenedor del formulario: agrupa los campos que se enviarán a un servidor -->
+    <form>
+
+        <!-- Párrafo para separar verticalmente el campo de usuario -->
+        <p>
+            <!-- Etiqueta descriptiva vinculada al campo de texto mediante anidación -->
+            <label>
+                Usuario:
+                <!-- Campo de entrada para texto alfanumérico en una sola línea -->
+                <input type="text">
+            </label>
+        </p>
+
+        <!-- Párrafo para separar verticalmente el campo de contraseña -->
+        <p>
+            <!-- Etiqueta descriptiva para la contraseña -->
+            <label>
+                Contraseña:
+                <!-- Campo de entrada seguro: enmascara los caracteres (puntos o asteriscos) al escribir -->
+                <input type="password">
+            </label>
+        </p>
+
+        <!-- Botón que activa el evento de envío (submit) del formulario -->
+        <button type="submit">
+            Entrar
+        </button>
+
+    </form>
+
+</body>
+
+</html>
