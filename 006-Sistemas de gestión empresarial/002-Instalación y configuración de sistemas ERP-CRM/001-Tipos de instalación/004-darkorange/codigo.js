@@ -1,18 +1,8 @@
-fetch("api/superapi.php?ruta=modulos")
-    .then(function (respuesta) { return respuesta.json() })
-    .then(function (datos) {
-        console.log(datos)
-        let menu = document.querySelector("#modulos")
-        datos.forEach(function (dato) {
-            menu.innerHTML += '<a href="">' + dato + '</a>'
-        })
-    })
-
 fetch("api/superapi.php?ruta=entidades")
     .then(function (respuesta) { return respuesta.json() })
     .then(function (datos) {
         console.log(datos)
-        let menu = document.querySelector("#entidades")
+        let menu = document.querySelector("nav")
         datos.forEach(function (dato) {
             menu.innerHTML += '<a href="">' + dato + '</a>'
         })

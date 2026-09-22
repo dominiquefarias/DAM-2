@@ -1,10 +1,5 @@
 <?php
  switch($_GET['ruta']){
- 		case "modulos":
-    	echo '
-      	["ventas","rrhh","facturacion","compras"]
-      ';
-      break;
  		case "entidades":
     	echo '
       	["clientes","productos","ventas","rrhh"]

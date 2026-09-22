@@ -6,9 +6,12 @@
       ';
       break;
  		case "entidades":
-    	echo '
-      	["clientes","productos","ventas","rrhh"]
-      ';
+    	$db = new SQLite3('../data/darkorange.db');
+			$result = $db->query("SHOW TABLES;");
+      while ($fila = $result->fetchArray(SQLITE3_ASSOC)) {
+      echo "<a href='?tabla=".$fila['name']."'><button>".$fila['name']."</button></a>";
+      }
+      $db->close();
       break;
     case "tabla":
     	echo '
