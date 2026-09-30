@@ -1,2 +1,0 @@
-# Sistemas de gestión empresarial
-
