@@ -21,33 +21,15 @@
 </head>
 
 <body>
-    <div class="contenedor barras" data="[40,50,60,70,80]"></div>
-    <div class="contenedor barras" data="[70,40,60,30,20]"></div>
-    <div class="contenedor tarta" data="[40,70,30,60,60]"></div>
-    <script src="grafica.js"></script>
+    <canvas width=512 height=512></canvas>
     <script>
-        function graficaBarras(elemento) {
-            let datos = elemento.getAttribute("data")
-            console.log(datos)
-            datos = eval(datos)
-            console.log(datos)
-            let contenedor = elemento
-            datos.forEach(function (dato) {
-                contenedor.innerHTML += `
-                  <div class="barra" style="height:`+ dato + `px;">
-                    `+ dato + `
-                  </div>`;
-            })
-        }
-        function graficaTarta(elemento) {
-            // Aqui voy a hacer la gráfica de tarta
+        let lienzo = document.querySelector("canvas")
+        let contexto = lienzo.getContext("2d")
 
-        }
-
-        let elementos = document.querySelectorAll(".contenedor")
-        elementos.forEach(function (elemento) {
-            graficaBarras(elemento)
-        })
+        contexto.fillStyle = "red"
+        contexto.beginPath();
+        contexto.arc(50, 50, 20, 0, Math.PI * 2)
+        contexto.fill()
     </script>
 </body>
 
