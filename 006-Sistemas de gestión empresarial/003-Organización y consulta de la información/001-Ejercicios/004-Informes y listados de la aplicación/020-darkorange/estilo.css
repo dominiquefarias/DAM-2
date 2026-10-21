@@ -1,0 +1,222 @@
+:root {
+    --color_corporativo: darkorange;
+    --margen_interior: 1rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: var(--color_corporativo);
+    color: white;
+    padding: var(--margen_interior);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+main {
+    flex: 1;
+    display: flex;
+}
+
+nav {
+    width: 220px;
+    background: var(--color_corporativo);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+nav a {
+    background: white;
+    color: var(--color_corporativo);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.9;
+}
+
+section {
+    flex: 1;
+    padding: var(--margen_interior);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--color_corporativo);
+}
+
+table th,
+table td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+table th {
+    background: var(--color_corporativo);
+    color: white;
+}
+
+table td {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* ---- CRUD (017) ---- */
+
+nav a.activo {
+    font-weight: bold;
+    transform: translateX(3px);
+}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--margen_interior);
+}
+
+.barra h2 {
+    margin: 2px 0 0;
+}
+
+.barra small {
+    color: #888;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+button {
+    border: 0;
+    background: var(--color_corporativo);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+
+button.secundario {
+    background: #eee;
+    color: #333;
+}
+
+button.editar {
+    background: #555;
+}
+
+button.eliminar {
+    background: #a33;
+}
+
+.tabla-contenedor {
+    overflow: auto;
+}
+
+.acciones {
+    white-space: nowrap;
+    width: 1%;
+}
+
+form {
+    max-width: 600px;
+    display: grid;
+    gap: 12px;
+}
+
+label {
+    display: grid;
+    gap: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font: inherit;
+}
+
+form button {
+    justify-self: start;
+}
+
+.vacio {
+    color: #888;
+    text-align: center;
+    padding: 2rem;
+}
+
+
+/* ---- Componentes C/R (019) ---- */
+#zona-formulario {
+    margin: 18px 0 28px;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+#zona-formulario h3,
+#zona-tabla h3 {
+    margin-top: 0;
+}
+
+.componente-formulario .control {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.componente-formulario .control label {
+    text-align: right;
+}
+
+
+/* ---- Reporting (020), estilos del profesor ---- */
+body>header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+body>header #boton-reporting{background:white;color:var(--color_corporativo);border:1px solid #ffffff80}
+.reporting-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.reporting-toolbar small{color:#777}
+.reporting-documento{background:#777;padding:24px;overflow:auto;border-radius:8px}
+.reporting-a4{width:210mm;min-height:297mm;margin:auto;background:#fff;padding:16mm;box-sizing:border-box;box-shadow:0 5px 30px #0004;color:#222}
+.reporting-cabecera{display:flex;justify-content:space-between;align-items:flex-start;background:none;color:#222;padding:0 0 8mm;box-shadow:none;border-bottom:3px solid var(--color_corporativo)}
+.reporting-cabecera h1{font-size:30px;margin:3px 0}.reporting-cabecera small{color:var(--color_corporativo);font-weight:bold;letter-spacing:1.5px}.reporting-fecha{font-size:11px;color:#777;text-align:right;max-width:55mm}
+.reporting-resumen{display:flex;gap:10px;margin:8mm 0}.reporting-resumen>div{border:1px solid #ddd;padding:10px 16px;min-width:35mm}.reporting-resumen strong{font-size:22px;color:var(--color_corporativo);display:block}.reporting-resumen span{font-size:10px;text-transform:uppercase;color:#777}
+.reporting-bloque{padding:0;margin:0 0 10mm;background:none;box-shadow:none;border-radius:0;overflow:visible;break-inside:auto}.reporting-titulo-tabla{display:flex;justify-content:space-between;align-items:end;margin-bottom:8px}.reporting-titulo-tabla h2{margin:0;font-size:20px}.reporting-titulo-tabla small{font-size:9px;color:#888;letter-spacing:1px}.reporting-contador{background:var(--color_corporativo);color:white;border-radius:20px;padding:5px 10px;font-size:10px}
+.reporting-tabla-scroll{overflow-x:auto}.reporting-bloque table{font-size:9px;border:1px solid #ddd}.reporting-bloque th,.reporting-bloque td{padding:5px 6px}.reporting-bloque thead tr:last-child th{cursor:pointer;user-select:none}.reporting-bloque thead tr:last-child th:hover{filter:brightness(.9)}
+.reporting-filtros th{padding:4px;background:color-mix(in srgb,var(--color_corporativo) 75%,white)}.reporting-filtros input{width:100%;padding:5px;border:0;border-radius:2px;font-size:9px;outline:none}.reporting-bloque tfoot td{font-weight:bold;border-top:2px solid #bbb;background:#f3f3f3}.reporting-bloque tfoot .numero{text-align:right}.reporting-resumen-label{color:var(--color_corporativo)}
+@page{size:A4;margin:10mm}
+@media print{
+  body{display:block;background:white}.reporting-toolbar,body>header,body>main>nav{display:none!important}body>main{display:block}.reporting-documento{padding:0;background:white;overflow:visible}.reporting-a4{width:auto;min-height:auto;margin:0;padding:0;box-shadow:none}.reporting-a4>.reporting-cabecera{display:flex!important}.reporting-filtros{display:none}.reporting-bloque{break-inside:auto}.reporting-bloque table{break-inside:auto}.reporting-bloque tr{break-inside:avoid}.reporting-bloque thead{display:table-header-group}body>main>section{margin:0;padding:0;box-shadow:none;overflow:visible}
+}
