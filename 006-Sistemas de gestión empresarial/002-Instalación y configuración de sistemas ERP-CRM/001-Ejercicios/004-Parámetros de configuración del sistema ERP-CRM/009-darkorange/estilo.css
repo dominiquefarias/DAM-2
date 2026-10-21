@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: darkorange;
+    color: white;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+main {
+    flex: 1;
+    display: flex;
+}
+
+nav {
+    width: 220px;
+    background: darkorange;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+nav a {
+    background: white;
+    color: darkorange;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.9;
+}
+
+section {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid darkorange;
+}
+
+table th,
+table td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+table th {
+    background: darkorange;
+    color: white;
+}
+
+table td {
+    border-bottom: 1px solid #f0f0f0;
+}
