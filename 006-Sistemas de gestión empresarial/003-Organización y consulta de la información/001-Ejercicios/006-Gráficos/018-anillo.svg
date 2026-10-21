@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <!-- Anillo: un círculo con borde grueso y sin relleno -->
+    <circle cx="150" cy="150" r="100" fill="none" stroke="#E6E0F8" stroke-width="40"/>
+    <!-- Parte del anillo (75%): stroke-dasharray = trozo pintado y hueco -->
+    <circle cx="150" cy="150" r="100" fill="none" stroke="#9D50FF" stroke-width="40"
+            stroke-dasharray="471 157" transform="rotate(-90 150 150)"/>
+    <text x="150" y="160" text-anchor="middle" font-size="32" font-family="Ubuntu, sans-serif" fill="#2D2345">75%</text>
+</svg>
