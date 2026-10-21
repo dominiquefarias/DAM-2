@@ -6,34 +6,36 @@
 
 ### a) Se han identificado los módulos que componen el ERP-CRM.
 
-En `001-Ejercicios/002-Módulos de un sistema ERP-CRM/005-darkorange` separo los módulos del ERP (ventas, rrhh, facturación y compras), que devuelve `api/superapi.php?ruta=modulos` y se pintan en el menú `#modulos`, de las entidades o tablas, que van en el menú `#entidades`.
+En clase vimos que un ERP se divide en módulos, y en mi aplicación los separé de las tablas: por un lado están los módulos de ventas, recursos humanos, facturación y compras, y por otro las entidades, como clientes, productos o empleados.
+
+Los módulos salen en un menú y las tablas en otro, y los dos se cargan pidiéndoselos al servidor. Esto me ayudó a entender que un módulo agrupa una parte de la empresa y que no es lo mismo que una tabla de la base de datos.
 
 ### b) Se han realizado diferentes tipos de instalaciones.
 
-En `001-Ejercicios/001-Tipos de instalación/` la aplicación pasa de solo HTML y CSS (`001-darkorange`) a un cliente que pide los datos a una API PHP con `fetch` (`002` y `003-darkorange`). Después pasa a usar una base de datos SQLite con `data/schema.sql` y `data/demo.sql` (`002-Módulos/006-darkorange`).
+La aplicación la fui montando de varias formas. Primero era solo una página con HTML y CSS, después el navegador pedía los datos a un servidor en PHP, y al final los datos salían de una base de datos SQLite creada con un esquema y unos datos de ejemplo.
 
-En `003-Procesos de instalación/008-darkorange/api/instalar.php` el instalador crea las tablas a partir de un modelo de texto (`data/modelodedatos.txt`).
+También hice un instalador al que le escribes el modelo de datos, es decir, el nombre de cada tabla y sus columnas, y él se encarga de crear las tablas solo.
 
 ### c) Se han configurado los módulos instalados.
 
-En `001-Ejercicios/004-Parámetros de configuración del sistema ERP-CRM/` el nombre y el color de la empresa se guardan en `data/config.php` (`009-darkorange`) y `codigo.js` los aplica al cargar. En `012-darkorange` el color pasa a ser una variable CSS que se cambia con `setProperty`.
+Configuré la aplicación para que el nombre de la empresa y el color corporativo estén guardados aparte y no metidos dentro del código. Al abrir la página se leen esos datos y se aplican.
 
-En el proyecto (`002-Proyecto/data/config.php`) he configurado Domasa con mi color `#9D50FF`.
+Con las variables de CSS basta con cambiar el color en un solo sitio para que cambie en toda la aplicación. En mi proyecto la dejé configurada como Domasa, con mi color morado.
 
 ### d) Se han realizado instalaciones adaptadas a las necesidades planteadas en diferentes supuestos.
 
-El instalador de `003-Procesos de instalación/008-darkorange` crea la base de datos según el modelo de cada empresa. Lo probé con mi modelo (`data/modelodedatos.txt`: clientes, productos y empleados).
+El instalador sirve para adaptar la aplicación a cada empresa, porque cada una puede escribir su propio modelo de datos. Yo lo probé con el mío, con clientes, productos y empleados.
 
-Para la empresa de ejemplo, un fabricante de aviones, `data/cargar_demo.php` (desde el `013-darkorange`) crea la base de datos con `schema.sql` y `demo.sql`. Lo hice así porque en mi PC no está el programa `sqlite3`.
+Para la empresa de ejemplo, que es un fabricante de aviones, preparé un script que crea la base de datos con sus datos, porque en mi ordenador no tenía instalado el programa de SQLite que usaba el profesor.
 
 ### e) Se ha verificado el funcionamiento del ERP-CRM.
 
-He probado cada versión con `php -S localhost:8000` y en el navegador. Así encontré que en mi `007-darkorange` la ruta `entidades` daba error 500 (`SHOW TABLES` no existe en SQLite) y lo corregí en el `008-darkorange`.
+Cada versión la probé arrancando el servidor de PHP y abriéndola en el navegador. Así vi que en una de mis versiones el menú de tablas daba error, porque usaba una consulta de MySQL que en SQLite no existe, y lo arreglé en la versión siguiente.
 
-En el proyecto he comprobado que se ven las tablas, que el CRUD del `017` funciona y que los colores se aplican.
+En el proyecto comprobé que se ven todas las tablas, que se pueden crear, editar y borrar registros y que los colores se aplican bien.
 
 ### f) Se han documentado las operaciones realizadas y las incidencias.
 
-Las operaciones están en `001-Ejercicios/002-Módulos de un sistema ERP-CRM/007-debug.md` (ver los errores de PHP y los logs de Apache) y en `008-jocarsa-documentacion.md` (generar y verificar el informe).
+Fui apuntando cómo ver los errores de PHP, dónde están los registros de Apache y cómo generar y comprobar el informe de entrega.
 
-Las incidencias están en `002-Proyecto/README.md`, apartado "Incidencias": `SHOW TABLES` en SQLite, el archivo `.db` vacío que crea `new SQLite3()`, la falta del programa `sqlite3` y el texto que no se leía en modo oscuro.
+Las incidencias que me encontré las dejé explicadas en el proyecto: la consulta de MySQL que fallaba en SQLite, que SQLite crea un archivo vacío cuando no encuentra la base de datos, que no tenía instalado el programa de SQLite y que con el modo oscuro la tabla no se leía.
