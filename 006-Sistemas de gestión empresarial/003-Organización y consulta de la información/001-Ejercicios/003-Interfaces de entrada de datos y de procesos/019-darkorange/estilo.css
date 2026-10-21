@@ -1,0 +1,204 @@
+:root {
+    --color_corporativo: darkorange;
+    --margen_interior: 1rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: var(--color_corporativo);
+    color: white;
+    padding: var(--margen_interior);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+main {
+    flex: 1;
+    display: flex;
+}
+
+nav {
+    width: 220px;
+    background: var(--color_corporativo);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+nav a {
+    background: white;
+    color: var(--color_corporativo);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.9;
+}
+
+section {
+    flex: 1;
+    padding: var(--margen_interior);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--color_corporativo);
+}
+
+table th,
+table td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+table th {
+    background: var(--color_corporativo);
+    color: white;
+}
+
+table td {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* ---- CRUD (017) ---- */
+
+nav a.activo {
+    font-weight: bold;
+    transform: translateX(3px);
+}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--margen_interior);
+}
+
+.barra h2 {
+    margin: 2px 0 0;
+}
+
+.barra small {
+    color: #888;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+button {
+    border: 0;
+    background: var(--color_corporativo);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+
+button.secundario {
+    background: #eee;
+    color: #333;
+}
+
+button.editar {
+    background: #555;
+}
+
+button.eliminar {
+    background: #a33;
+}
+
+.tabla-contenedor {
+    overflow: auto;
+}
+
+.acciones {
+    white-space: nowrap;
+    width: 1%;
+}
+
+form {
+    max-width: 600px;
+    display: grid;
+    gap: 12px;
+}
+
+label {
+    display: grid;
+    gap: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font: inherit;
+}
+
+form button {
+    justify-self: start;
+}
+
+.vacio {
+    color: #888;
+    text-align: center;
+    padding: 2rem;
+}
+
+
+/* ---- Componentes C/R (019) ---- */
+#zona-formulario {
+    margin: 18px 0 28px;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+#zona-formulario h3,
+#zona-tabla h3 {
+    margin-top: 0;
+}
+
+.componente-formulario .control {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.componente-formulario .control label {
+    text-align: right;
+}
