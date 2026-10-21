@@ -1,5 +1,7 @@
 :root {
-    --color_corporativo: darkorange;
+    --color_corporativo: #9D50FF;
+    --color_suave: #E6E0F8;
+    --color_texto: #2D2345;
     --margen_interior: 1rem;
 }
 
@@ -21,6 +23,9 @@ body {
 body {
     display: flex;
     flex-direction: column;
+    /* Fondo y texto explícitos: sin ellos, con el sistema en modo oscuro la tabla no se leía */
+    background: white;
+    color: var(--color_texto);
 }
 
 header {

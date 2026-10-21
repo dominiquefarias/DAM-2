@@ -1,4 +1,4 @@
 {
-    "nombre": "Domasa | darkorange",
-    "color": "darkorange"
+    "nombre": "Domasa",
+    "color": "#9D50FF"
 }
