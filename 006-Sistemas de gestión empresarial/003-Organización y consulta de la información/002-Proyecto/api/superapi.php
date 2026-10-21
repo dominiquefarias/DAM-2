@@ -86,7 +86,7 @@
                 while ($fila = $resultado->fetchArray(SQLITE3_ASSOC)) {
                     $registros[] = $fila;
                 }
-                echo json_encode(['columnas' => $columnas, 'clavePrimaria' => $clave, 'registros' => $registros], JSON_UNESCAPED_UNICODE);
+                echo json_encode(['tabla' => $tabla, 'columnas' => $columnas, 'clavePrimaria' => $clave, 'registros' => $registros], JSON_UNESCAPED_UNICODE);
                 break;
 
             case 'crear':
