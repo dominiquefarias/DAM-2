@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Variables CSS</title>
+    <style>
+        /* Las variables se declaran en :root y se usan con var() */
+        :root {
+            --color_corporativo: darkorange;
+            --margen_interior: 20px;
+        }
+        h1, p {
+            color: var(--color_corporativo);
+            padding: var(--margen_interior);
+        }
+        h2 {
+            color: white;
+            background: var(--color_corporativo);
+            padding: var(--margen_interior);
+        }
+    </style>
+</head>
+<body>
+    <h1>Domasa</h1>
+    <h2>Título en negativo</h2>
+    <p>Si cambio --color_corporativo en :root, cambia en toda la página.</p>
+</body>
+</html>

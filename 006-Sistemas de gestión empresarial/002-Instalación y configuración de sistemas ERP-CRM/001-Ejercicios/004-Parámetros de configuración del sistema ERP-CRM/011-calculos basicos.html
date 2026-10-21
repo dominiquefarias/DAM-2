@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Cálculos con variables CSS</title>
+    <style>
+        :root {
+            --anchura: 150px;
+        }
+        div { height: 50px; margin: 5px; }
+        /* calc() permite operar con variables y unidades */
+        #uno { width: var(--anchura); background: darkorange; }
+        #dos { width: calc(var(--anchura) + 20px); background: orange; }
+        #tres { width: calc(var(--anchura) * 2); background: moccasin; }
+    </style>
+</head>
+<body>
+    <div id="uno"></div>
+    <div id="dos"></div>
+    <div id="tres"></div>
+</body>
+</html>
