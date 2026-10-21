@@ -6,51 +6,37 @@
 
 ### a) Se han reconocido los diferentes sistemas ERP-CRM que existen en el mercado.
 
-En `001-Ejercicios/001-Concepto de ERP/001-concepto de ERP.md` defino ERP (*Enterprise Resource Planning*) como el sistema que gestiona los recursos de una empresa y abarca todo su proceso de gestión de datos. Enumero las áreas que cubre: inventario (con su clave ajena al producto, unidades y localización), usuarios (nombre, apellidos, usuario, contraseña y permisos), multisede, empleados, almacenes, facturas, logística, productos e incidencias.
+En clase vimos qué es un ERP: un programa que gestiona los recursos de una empresa, con partes como el inventario, los usuarios y sus permisos, los empleados, los almacenes, las facturas, la logística, los productos y las incidencias, y que puede trabajar con varias sedes.
 
-En `001-Ejercicios/003-Concepto de CRM/001-crm.md` defino CRM (*Customer Relationship Management*) como el software de gestión de la relación con el cliente y de ventas. Lo sitúo junto a otros sistemas de gestión que existen en el mercado para sectores concretos: SIS (gestión de estudiantes), LMS (plataformas de aprendizaje), GMAO (mantenimiento asistido por ordenador), PMS (gestión hotelera) y CMS (gestión de contenidos).
+También vimos qué es un CRM, que se centra en la relación con los clientes y en las ventas, y otros sistemas de gestión que hay en el mercado para sectores concretos, como los de centros educativos, plataformas de formación, mantenimiento, hoteles o gestores de contenido. Como producto concreto salió Odoo.
 
-Como producto concreto del mercado aparece Odoo, que analizo por su modelo de licencia en `001-Ejercicios/005-Tipos de licencias de los ERP-CRM/001-Aspectos legales.md`.
-
-<!-- PENDIENTE: ampliar con 002-Revisión de los ERP actuales y 004-Revisión de los CRM actuales cuando estén escritos. Borrar este comentario antes de generar el informe. -->
+<!-- PENDIENTE: ampliar con la revisión de ERP y CRM actuales cuando esté escrita. Borrar este comentario antes de generar el informe. -->
 
 ### b) Se han identificado los diferentes tipos de licencia de los sistemas ERP-CRM.
 
-En `001-Ejercicios/005-Tipos de licencias de los ERP-CRM/001-Aspectos legales.md` identifico tres tipos de licencia: GPL, propietaria y Apache.
+Identifiqué tres tipos de licencia: GPL, propietaria y Apache. Con la licencia propietaria la empresa se queda con el código y la propiedad, y al cliente solo le da el programa ya compilado o acceso al servicio pagando una suscripción.
 
-- **Propietaria:** el desarrollador conserva el código y la propiedad. Al cliente solo se le entrega una copia de los binarios o se le da acceso al servicio mediante suscripción.
-- **Modelo Odoo:** es una licencia más libre. Cualquiera puede descargar el código fuente, instalarlo y personalizarlo como quiera, pero la propiedad la sigue reteniendo Odoo.
-
-En el mismo archivo recojo los aspectos legales que acompañan a una licencia: el clausulado, la garantía, los términos del servicio y el pliego de condiciones.
+También vimos el modelo de Odoo, que es más libre porque cualquiera puede descargar el código, instalarlo y personalizarlo, aunque la propiedad sigue siendo de Odoo. Además repasamos lo legal que acompaña a una licencia: las cláusulas, la garantía, los términos del servicio y el pliego de condiciones.
 
 ### c) Se han comparado sistemas ERP-CRM en función de sus características y requisitos.
 
-Comparo opciones según sus características y requisitos en tres apartados:
+Comparé las opciones para montar un ERP según lo que necesita cada una. Para guardar los datos ordené las bases de datos por prioridad: primero las relacionales, después las documentales y por último las soluciones hechas a medida.
 
-- **Gestores de datos:** en `001-Ejercicios/006-Sistemas gestores de bases de datos compatibles con el software/001-analisis.md` los ordeno por prioridad. Primero las bases de datos relacionales (MySQL o PostgreSQL, prototipando con SQLite), después las documentales (MongoDB) y por último las soluciones de acceso a datos personalizadas.
-- **Tecnologías de servidor:** en `001-Ejercicios/006-Sistemas gestores de bases de datos compatibles con el software/002-arquitectura de la solucion.md` planteo las alternativas dentro de una arquitectura web cliente/servidor: PHP + Laravel o Node.js en el servidor, y SQL, MongoDB o soluciones personalizadas para el almacenamiento.
-- **Licencias:** en `001-Ejercicios/005-Tipos de licencias de los ERP-CRM/001-Aspectos legales.md` comparo el modelo propietario (binarios o suscripción) con el modelo de Odoo (código descargable y personalizable, pero propiedad del fabricante).
+Para el servidor vi que se puede usar PHP con Laravel o Node.js, y en cuanto a licencias comparé el modelo propietario con el de Odoo.
 
-<!-- PENDIENTE: añadir la comparación de productos de 002-Revisión de los ERP actuales y 004-Revisión de los CRM actuales cuando estén escritos. Borrar este comentario antes de generar el informe. -->
+<!-- PENDIENTE: añadir la comparación de productos de la revisión de ERP y CRM cuando esté escrita. Borrar este comentario antes de generar el informe. -->
 
 ### d) Se ha identificado el sistema operativo adecuado a cada sistema ERP-CRM.
 
-En `001-Ejercicios/007-Instalación y configuración del sistema informático/001-cliente y servidor.md` separo los dos lados del sistema:
+El cliente de un ERP web se usa desde el navegador con HTML, CSS y JavaScript, así que funciona igual en Windows, en Mac o en Linux.
 
-- **Cliente:** una interfaz web en HTML, CSS y JavaScript que se usa desde el navegador. Por eso es compatible con Windows, Mac y Linux.
-- **Servidor:** el sistema operativo adecuado es Linux, dentro de una pila LAMP (Linux, Apache, MySQL, PHP/Perl) o con Node.js en lugar de PHP.
-
-En `001-Ejercicios/006-Sistemas gestores de bases de datos compatibles con el software/002-arquitectura de la solucion.md` detallo el papel de cada tecnología en el cliente: HTML para la estructura, CSS para el estilo y JavaScript para el comportamiento.
+Para el servidor el sistema adecuado es Linux, con la pila LAMP, que es Linux, Apache, MySQL y PHP o Perl, o con Node.js en lugar de PHP.
 
 ### e) Se ha identificado el sistema gestor de datos adecuado a cada sistema ERP-CRM.
 
-En `001-Ejercicios/006-Sistemas gestores de bases de datos compatibles con el software/001-analisis.md` establezco el orden de elección del gestor de datos:
+Como sistema gestor de datos lo primero son las bases de datos relacionales, como MySQL o PostgreSQL, y SQLite para hacer los prototipos.
 
-1. **Relacional (SQL):** MySQL o PostgreSQL, y SQLite para prototipar.
-2. **Documental:** MongoDB.
-3. **Soluciones personalizadas** de gestión de datos.
-
-En `001-Ejercicios/007-Instalación y configuración del sistema informático/001-cliente y servidor.md` encajo esa elección en el servidor: MySQL forma parte de la pila LAMP.
+Si una relacional no encaja, la siguiente opción sería una documental como MongoDB, y por último una solución de datos hecha a medida. En el servidor, MySQL encaja dentro de la pila LAMP.
 
 ### f) Se han verificado las configuraciones del sistema operativo y del gestor de datos para garantizar la funcionalidad del ERP-CRM.
 
