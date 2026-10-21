@@ -23,6 +23,12 @@ class DarkorangeGraficas {
    });
    if(ri){const t=nodo('text',{x:cx,y:cy,'text-anchor':'middle','font-size':24,'font-weight':700,fill:'#333'});t.textContent=new Intl.NumberFormat('es-ES',{notation:total>9999?'compact':'standard'}).format(total);svg.append(t)}
    datos.slice(0,7).forEach((d,i)=>{const y=38+i*29;svg.append(nodo('rect',{x:275,y:y-11,width:12,height:12,rx:3,fill:this.colores[i%this.colores.length]}));const t=nodo('text',{x:293,y,fill:'#444','font-size':12});t.textContent=d.label.slice(0,17)+' · '+d.valor;svg.append(t)})
+  }else if(tipo==='lineas'){
+   // Gráfica de líneas (añadida por mí): una línea que une los valores y un punto en cada uno
+   const max=Math.max(...datos.map(d=>d.valor),1),n=Math.min(datos.length,12),paso=n>1?370/(n-1):0;
+   const puntos=datos.slice(0,n).map((d,i)=>[35+i*paso,216-d.valor/max*190]);
+   svg.append(nodo('polyline',{points:puntos.map(p=>p.join(',')).join(' '),fill:'none',stroke:this.colores[0],'stroke-width':3}));
+   puntos.forEach(([x,y],i)=>{const punto=nodo('circle',{cx:x,cy:y,r:5,fill:this.colores[2]});svg.append(punto);activar(punto,datos[i]);const t=nodo('text',{x,y:235,'text-anchor':'middle','font-size':10,fill:'#555'});t.textContent=datos[i].label.slice(0,6);svg.append(t)});
   }else{
    const max=Math.max(...datos.map(d=>d.valor),1),n=Math.min(datos.length,12),gap=9,w=(395/n)-gap;
    datos.slice(0,n).forEach((d,i)=>{const height=d.valor/max*190,x=25+i*(w+gap),y=216-height;const rect=nodo('rect',{x,y,width:w,height,rx:4,fill:this.colores[i%this.colores.length]});svg.append(rect);activar(rect,d);const t=nodo('text',{x:x+w/2,y:235,'text-anchor':'middle','font-size':10,fill:'#555'});t.textContent=d.label.slice(0,Math.max(3,Math.floor(w/6)));svg.append(t)});
