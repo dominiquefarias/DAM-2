@@ -53,7 +53,8 @@ class DarkorangeReporting {
   crearTabla(datos) {
     const bloque = document.createElement("section");
     bloque.className = "reporting-bloque";
-    const numericas = datos.columnas.map((c,i) => this.esNumerica(c) ? i : -1).filter(i => i >= 0);
+    // La clave primaria es un número pero no tiene sentido sumarla
+    const numericas = datos.columnas.map((c,i) => this.esNumerica(c) && !c.pk ? i : -1).filter(i => i >= 0);
 
     bloque.innerHTML = `
       <div class="reporting-titulo-tabla">
