@@ -1,7 +1,7 @@
 import os
 
 ruta = "/var/www/html"
-archivo = open("/var/www/html/DAM/DAM-2/006-Sistemas de gestión empresarial/003-Organización y consulta de la información/007-Herramientas de monitorización y de evaluación del rendimiento/guarda.md",'w')
+archivo = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "guarda.md"),'w')
 
 def formato_tamano(bytes):
     for unidad in ["B", "KB", "MB", "GB", "TB"]:
