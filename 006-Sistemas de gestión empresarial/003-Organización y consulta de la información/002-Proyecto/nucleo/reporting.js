@@ -74,6 +74,19 @@ class DarkorangeReporting {
       DarkorangeCSV.descargar(datos.tabla, datos.columnas, filas);
     };
 
+    // Igual que el CSV pero en JSON: solo las filas visibles (respeta los filtros)
+    const botonJSON = document.createElement('button');
+    botonJSON.type = 'button';
+    botonJSON.textContent = 'Exportar JSON';
+    botonJSON.className = 'reporting-exportar-csv';
+    bloque.querySelector('.reporting-titulo-tabla').appendChild(botonJSON);
+    botonJSON.onclick = () => {
+      const filas = [...bloque.querySelector('tbody').rows]
+        .filter(fila => fila.style.display !== 'none')
+        .map(fila => Object.fromEntries(datos.columnas.map((c, i) => [c.name, fila.cells[i].textContent])));
+      DarkorangeJSON.descargar(datos.tabla, filas);
+    };
+
     const thead = bloque.querySelector("thead");
     const filtros = document.createElement("tr");
     filtros.className = "reporting-filtros";

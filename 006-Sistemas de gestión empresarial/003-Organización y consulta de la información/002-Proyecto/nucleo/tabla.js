@@ -17,7 +17,11 @@ class DarkorangeTabla {
     botonCSV.type = 'button';
     botonCSV.textContent = 'Exportar CSV';
     botonCSV.onclick = () => DarkorangeCSV.descargar(this.tabla, this.columnas, this.registros);
-    cabecera.append(titulo, botonCSV);
+    const botonJSON = document.createElement('button');
+    botonJSON.type = 'button';
+    botonJSON.textContent = 'Exportar JSON';
+    botonJSON.onclick = () => DarkorangeJSON.descargar(this.tabla, this.registros);
+    cabecera.append(titulo, botonCSV, botonJSON);
     this.contenedor.appendChild(cabecera);
 
     if (!this.columnas.length) {
