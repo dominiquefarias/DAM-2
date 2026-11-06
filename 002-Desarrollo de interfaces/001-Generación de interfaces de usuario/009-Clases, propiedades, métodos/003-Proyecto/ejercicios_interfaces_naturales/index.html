@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1" name="viewport" />
+  <title>Dominique Farías | interfaces naturales</title>
+  <link href="../img/favicon1.png" rel="icon" type="image/png" />
+  <link href="../css/estilo.css" rel="stylesheet" />
+  <link href="css/ejercicios.css" rel="stylesheet" />
+</head>
+
+<body class="ju-demo-page">
+  <header class="ju-demo-header">
+    <div>
+      <h1>Interfaces naturales · UD2</h1>
+      <p>Ejercicios independientes de gestos, rostro y realidad aumentada</p>
+    </div>
+    <nav>
+      <a href="../index.html">Aplicación (voz y dictado)</a>
+    </nav>
+  </header>
+
+  <main class="ju-demo-main">
+    <div class="ju-demo-grid">
+      <article class="ju-card">
+        <h2>01 · Gestos</h2>
+        <p>Carrusel que se controla con gestos táctiles o de ratón (deslizar, doble toque, pulsación larga y pinza) y con gestos de la mano delante de la cámara.</p>
+        <p class="ej-nota">Pointer Events · MediaPipe Gesture Recognizer</p>
+        <a class="ju-btn" href="01-gestos/index.html">Abrir ejercicio</a>
+      </article>
+      <article class="ju-card">
+        <h2>02 · Detector facial</h2>
+        <p>Detecta el rostro, dibuja su malla y mide expresiones (sonrisa, boca abierta, cejas, guiños). Si sonríes, la interfaz hace una foto.</p>
+        <p class="ej-nota">MediaPipe Face Landmarker · blendshapes</p>
+        <a class="ju-btn" href="02-detector-facial/index.html">Abrir ejercicio</a>
+      </article>
+      <article class="ju-card">
+        <h2>03 · Realidad aumentada / virtual</h2>
+        <p>Escena 3D con mi monograma y objetos interactivos. Se puede ver en VR, en AR en móviles compatibles o sobre la imagen de la webcam.</p>
+        <p class="ej-nota">A-Frame · WebXR</p>
+        <a class="ju-btn" href="03-realidad-aumentada/index.html">Abrir ejercicio</a>
+      </article>
+      <article class="ju-card">
+        <h2>Requisitos</h2>
+        <p>Servir el proyecto por HTTP (<code>python3 -m http.server 8000</code>) y abrirlo en <code>localhost</code> con Chrome o Edge. Hace falta conexión para descargar las librerías y los modelos.</p>
+        <p class="ej-nota">La cámara y el micrófono solo funcionan en HTTPS o localhost.</p>
+      </article>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1" name="viewport" />
+  <title>Dominique Farías | detector facial</title>
+  <link href="../../img/favicon1.png" rel="icon" type="image/png" />
+  <link href="../../css/estilo.css" rel="stylesheet" />
+  <link href="../css/ejercicios.css" rel="stylesheet" />
+</head>
+
+<body class="ju-demo-page">
+  <header class="ju-demo-header">
+    <div>
+      <h1>02 · Detector facial</h1>
+      <p>MediaPipe Face Landmarker: 478 puntos del rostro y 52 coeficientes de expresión</p>
+    </div>
+    <nav>
+      <a href="../index.html">Ejercicios</a>
+      <a href="../../index.html">Aplicación</a>
+    </nav>
+  </header>
+
+  <main class="ju-demo-main">
+    <div class="ju-demo-grid">
+      <article class="ju-card">
+        <h2>Cámara</h2>
+        <div class="ju-button-row">
+          <button class="ju-btn" id="botonCamara" type="button">Activar cámara</button>
+          <span class="ej-estado" id="estado" data-estado="apagado">Cámara apagada</span>
+        </div>
+
+        <div class="ej-camara">
+          <div class="ej-camara-vacia" id="vacia">La imagen de la cámara aparecerá aquí</div>
+          <video id="video" playsinline muted></video>
+          <canvas id="lienzo"></canvas>
+        </div>
+        <p class="ej-nota">El vídeo se procesa en el propio navegador; no se envía a ningún servidor.</p>
+      </article>
+
+      <article class="ju-card">
+        <h2>Expresión</h2>
+        <p class="ej-resultado" id="expresion">😶 Sin rostro</p>
+        <p class="ej-nota" id="rostros">Rostros detectados: 0</p>
+
+        <!-- Cada barra muestra un coeficiente (0 a 1) que devuelve el modelo -->
+        <div class="ej-barras" id="barras"></div>
+
+        <h3>Acción: sonríe para hacer una foto</h3>
+        <p class="ej-nota">Mantén la sonrisa un segundo. Se guarda una foto como máximo cada 3 segundos.</p>
+        <div class="ej-galeria" id="galeria"></div>
+      </article>
+    </div>
+  </main>
+
+  <script type="module" src="facial.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1" name="viewport" />
+  <title>Dominique Farías | realidad aumentada</title>
+  <link href="../../img/favicon1.png" rel="icon" type="image/png" />
+  <link href="../../css/estilo.css" rel="stylesheet" />
+  <link href="../css/ejercicios.css" rel="stylesheet" />
+  <!-- A-Frame: framework de realidad virtual y aumentada sobre Three.js y WebXR -->
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="ar.js"></script>
+</head>
+
+<body class="ju-demo-page">
+  <header class="ju-demo-header">
+    <div>
+      <h1>03 · Realidad aumentada y virtual</h1>
+      <p>A-Frame y WebXR</p>
+    </div>
+    <nav>
+      <a href="../index.html">Ejercicios</a>
+      <a href="../../index.html">Aplicación</a>
+    </nav>
+  </header>
+
+  <main class="ju-demo-main">
+    <article class="ju-card">
+      <h2>Escena con mi identidad visual</h2>
+      <p>Arrastra para mirar alrededor y usa W A S D para moverte. Toca un objeto para cambiar su color. Con el botón de abajo a la derecha de la escena se entra en VR (gafas) o en AR (móvil Android con ARCore).</p>
+
+      <div class="ju-button-row">
+        <button class="ju-btn" id="botonCamara" type="button">Ver sobre la cámara (AR)</button>
+        <span class="ej-estado" id="estado" data-estado="apagado">Fondo virtual</span>
+      </div>
+
+      <div class="ej-escena" id="contenedor">
+        <!-- En modo cámara el vídeo queda detrás y el lienzo 3D es transparente -->
+        <video id="video" playsinline muted></video>
+
+        <a-scene embedded renderer="alpha: true; antialias: true; colorManagement: true" webxr="optionalFeatures: local-floor">
+          <!-- Fondo virtual: se oculta en AR para ver el mundo real -->
+          <a-sky class="fondo" color="#E9DDF1" hide-on-enter-ar></a-sky>
+          <a-plane class="fondo" rotation="-90 0 0" width="14" height="14" color="#FAF7FA" hide-on-enter-ar></a-plane>
+
+          <a-entity light="type: ambient; intensity: 0.7"></a-entity>
+          <a-entity light="type: directional; intensity: 0.8" position="2 4 2"></a-entity>
+
+          <!-- Objetos interactivos delante de la cámara -->
+          <a-entity position="0 1.5 -3">
+            <a-box interactivo="nombre: Monograma" width="1" height="1" depth="0.2" color="#342D3C"
+              animation="property: rotation; to: 0 360 0; dur: 9000; loop: true; easing: linear">
+              <a-text value="DF" color="#FFFFFF" align="center" width="6" position="0 0 0.11"></a-text>
+              <a-text value="DF" color="#FFFFFF" align="center" width="6" position="0 0 -0.11" rotation="0 180 0"></a-text>
+            </a-box>
+
+            <a-torus-knot interactivo="nombre: Nudo" position="-1.7 0 0" radius="0.35" radius-tubular="0.07" color="#A991C9"
+              animation="property: rotation; to: 360 360 0; dur: 12000; loop: true; easing: linear"></a-torus-knot>
+
+            <a-sphere interactivo="nombre: Esfera" position="1.7 0 0" radius="0.4" color="#D9A1B8"
+              animation="property: position; to: 1.7 0.4 0; dir: alternate; dur: 1400; loop: true; easing: easeInOutSine"></a-sphere>
+
+            <a-text id="rotulo" value="Toca un objeto" color="#342D3C" align="center" width="5" position="0 -1 0"></a-text>
+          </a-entity>
+
+          <!-- Puntero: ratón en el ordenador, mandos en VR y toque de pantalla en AR -->
+          <a-entity cursor="rayOrigin: mouse" raycaster="objects: [interactivo]"></a-entity>
+          <a-entity laser-controls="hand: right" raycaster="objects: [interactivo]"></a-entity>
+          <a-entity cursor="rayOrigin: xrselect" raycaster="objects: [interactivo]"></a-entity>
+
+          <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+        </a-scene>
+      </div>
+      <p class="ej-nota">«Ver sobre la cámara» coloca la escena encima de la webcam: es una AR simulada para probar en el portátil. La AR real con WebXR necesita un móvil compatible y HTTPS.</p>
+    </article>
+  </main>
+</body>
+
+</html>

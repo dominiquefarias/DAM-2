@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1" name="viewport" />
+  <title>Dominique Farías | gestos</title>
+  <link href="../../img/favicon1.png" rel="icon" type="image/png" />
+  <link href="../../css/estilo.css" rel="stylesheet" />
+  <link href="../css/ejercicios.css" rel="stylesheet" />
+</head>
+
+<body class="ju-demo-page">
+  <header class="ju-demo-header">
+    <div>
+      <h1>01 · Gestos y comandos por gestos</h1>
+      <p>Pointer Events y MediaPipe Gesture Recognizer</p>
+    </div>
+    <nav>
+      <a href="../index.html">Ejercicios</a>
+      <a href="../../index.html">Aplicación</a>
+    </nav>
+  </header>
+
+  <main class="ju-demo-main">
+    <div class="ju-demo-grid">
+      <!-- Parte A: gestos táctiles / ratón sobre el carrusel -->
+      <article class="ju-card">
+        <h2>Carrusel con gestos</h2>
+        <p>Desliza a los lados para cambiar, haz doble toque para marcar «me gusta», mantén pulsado para ver el detalle y usa dos dedos (pinza) para hacer zoom. Con el teclado: ← → y Enter.</p>
+
+        <div class="ej-superficie" id="superficie" tabindex="0" aria-label="Carrusel controlado por gestos">
+          <div class="ej-pista" id="pista">
+            <section class="ej-diapositiva">
+              <div class="ej-contenido"><span>🎙️</span><h3>Voz</h3></div>
+              <div class="ej-corazon">💜</div>
+              <div class="ej-detalle">Comandos y dictado con Web Speech API.</div>
+            </section>
+            <section class="ej-diapositiva">
+              <div class="ej-contenido"><span>✋</span><h3>Gestos</h3></div>
+              <div class="ej-corazon">💜</div>
+              <div class="ej-detalle">Pointer Events y reconocimiento de la mano.</div>
+            </section>
+            <section class="ej-diapositiva">
+              <div class="ej-contenido"><span>🙂</span><h3>Rostro</h3></div>
+              <div class="ej-corazon">💜</div>
+              <div class="ej-detalle">Malla facial y expresiones con MediaPipe.</div>
+            </section>
+            <section class="ej-diapositiva">
+              <div class="ej-contenido"><span>🥽</span><h3>Realidad aumentada</h3></div>
+              <div class="ej-corazon">💜</div>
+              <div class="ej-detalle">Escena 3D con A-Frame y WebXR.</div>
+            </section>
+          </div>
+        </div>
+        <div class="ej-puntos" id="puntos"></div>
+
+        <h3>Últimos gestos</h3>
+        <ol class="ej-registro" id="registro" reversed></ol>
+      </article>
+
+      <!-- Parte B: gestos de la mano con la webcam -->
+      <article class="ju-card">
+        <h2>Comandos con la mano</h2>
+        <p>Activa la cámara y haz un gesto delante; mantenlo medio segundo para que se ejecute sobre el carrusel.</p>
+
+        <div class="ju-button-row">
+          <button class="ju-btn" id="botonCamara" type="button">Activar cámara</button>
+          <span class="ej-estado" id="estado" data-estado="apagado">Cámara apagada</span>
+        </div>
+
+        <div class="ej-camara">
+          <div class="ej-camara-vacia" id="vacia">La imagen de la cámara aparecerá aquí</div>
+          <video id="video" playsinline muted></video>
+          <canvas id="lienzo"></canvas>
+        </div>
+
+        <p class="ej-resultado" id="gesto">Sin gesto</p>
+        <p class="ej-nota" id="confianza">Confianza: —</p>
+
+        <table class="ej-mapa">
+          <tbody id="mapa"></tbody>
+        </table>
+      </article>
+    </div>
+  </main>
+
+  <script type="module" src="gestos.js"></script>
+</body>
+
+</html>

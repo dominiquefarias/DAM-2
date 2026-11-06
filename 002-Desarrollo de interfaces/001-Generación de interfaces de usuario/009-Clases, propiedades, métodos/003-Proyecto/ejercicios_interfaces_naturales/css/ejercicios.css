@@ -1,0 +1,257 @@
+/* =========================================================
+   Ejercicios UD2 · se apoya en ../../css/estilo.css (marca y librería)
+   ========================================================= */
+.ju-demo-page {
+  font-size:14px
+}
+.ju-demo-page .ju-card p {
+  line-height:1.5
+}
+.ej-nota {
+  color:var(--texto-secundario);
+  font-size:13px
+}
+
+/* Indicador de estado: el texto acompaña siempre al color */
+.ej-estado {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 14px;
+  border-radius:var(--radio-pildora);
+  background:var(--color2);
+  color:var(--texto-marca);
+  font-size:12px;
+  font-weight:500
+}
+.ej-estado:before {
+  content:"";
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--texto-secundario)
+}
+.ej-estado[data-estado="cargando"]:before {
+  background:#B7791F
+}
+.ej-estado[data-estado="detectando"]:before {
+  background:#2F855A
+}
+.ej-estado[data-estado="error"]:before {
+  background:#B3261E
+}
+
+/* Cámara con la capa de dibujo encima; ambas en espejo */
+.ej-camara {
+  position:relative;
+  aspect-ratio:4/3;
+  width:100%;
+  margin-top:16px;
+  background:#342D3C;
+  border-radius:var(--radio-tarjeta);
+  overflow:hidden
+}
+.ej-camara video,.ej-camara canvas {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scaleX(-1)
+}
+.ej-camara-vacia {
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#B9ADBF;
+  text-align:center;
+  padding:20px
+}
+.ej-resultado {
+  font-size:22px;
+  font-weight:700;
+  margin:12px 0 4px
+}
+
+/* Tabla de correspondencias gesto → acción */
+.ej-mapa {
+  width:100%;
+  margin-top:12px
+}
+.ej-mapa td:first-child {
+  font-size:20px;
+  width:44px
+}
+.ej-mapa tr.activo td {
+  background:var(--color2);
+  font-weight:700
+}
+
+/* Carrusel controlado por gestos */
+.ej-superficie {
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radio-tarjeta);
+  touch-action:none;   /* el navegador no hace scroll ni zoom: los gestos los gestionamos nosotros */
+  user-select:none;
+  cursor:grab;
+  outline:none
+}
+.ej-superficie:focus-visible {
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--color) 35%,transparent)
+}
+.ej-pista {
+  display:flex;
+  transition:transform .3s var(--curva)
+}
+.ej-diapositiva {
+  flex:0 0 100%;
+  height:260px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  position:relative
+}
+.ej-diapositiva:nth-child(1) { background:var(--color2) }
+.ej-diapositiva:nth-child(2) { background:var(--rosa-suave) }
+.ej-diapositiva:nth-child(3) { background:#E3D6EF }
+.ej-diapositiva:nth-child(4) { background:#F2E4EA }
+.ej-contenido {
+  transition:transform .18s var(--curva)
+}
+.ej-contenido span {
+  display:block;
+  font-size:64px
+}
+.ej-contenido h3 {
+  margin:8px 0 0;
+  color:#342D3C
+}
+.ej-corazon {
+  position:absolute;
+  top:14px;
+  right:18px;
+  font-size:28px;
+  opacity:0;
+  transform:scale(.6);
+  transition:.2s var(--curva)
+}
+.ej-diapositiva.me-gusta .ej-corazon {
+  opacity:1;
+  transform:none
+}
+.ej-detalle {
+  position:absolute;
+  inset:auto 14px 14px 14px;
+  padding:10px 14px;
+  border-radius:var(--radio-interior);
+  background:rgba(52,45,60,.88);
+  color:white;
+  opacity:0;
+  transition:opacity .2s
+}
+.ej-diapositiva.con-detalle .ej-detalle {
+  opacity:1
+}
+.ej-puntos {
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:12px
+}
+.ej-puntos span {
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--borde)
+}
+.ej-puntos span.activo {
+  background:var(--color);
+  width:24px;
+  border-radius:var(--radio-pildora)
+}
+.ej-registro {
+  margin:12px 0 0;
+  padding-left:20px;
+  font-family:"DM Mono",monospace;
+  font-size:12px;
+  color:var(--texto-secundario);
+  min-height:90px
+}
+
+/* Expresiones faciales */
+.ej-barras {
+  display:grid;
+  gap:10px;
+  margin-top:12px
+}
+.ej-barras label {
+  display:grid;
+  grid-template-columns:130px 1fr 42px;
+  align-items:center;
+  gap:10px;
+  font-size:13px
+}
+.ej-barras progress {
+  width:100%;
+  height:10px;
+  appearance:none;
+  border:0;
+  border-radius:var(--radio-pildora);
+  background:var(--color2);
+  overflow:hidden
+}
+.ej-barras progress::-webkit-progress-bar {
+  background:var(--color2)
+}
+.ej-barras progress::-webkit-progress-value {
+  background:var(--color);
+  border-radius:var(--radio-pildora)
+}
+.ej-barras progress::-moz-progress-bar {
+  background:var(--color)
+}
+.ej-barras output {
+  font-family:"DM Mono",monospace;
+  text-align:right
+}
+.ej-galeria {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px;
+  min-height:80px
+}
+.ej-galeria img {
+  width:100px;
+  border-radius:var(--radio-interior);
+  box-shadow:var(--sombra-tarjeta)
+}
+
+/* Escena A-Frame embebida */
+.ej-escena {
+  position:relative;
+  height:460px;
+  margin-top:16px;
+  border-radius:var(--radio-tarjeta);
+  overflow:hidden;
+  background:#342D3C
+}
+.ej-escena a-scene {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%
+}
+.ej-escena video {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none
+}
+.ej-escena.modo-camara video {
+  display:block
+}
